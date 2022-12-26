@@ -1,0 +1,11 @@
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <% if post.image.small_thumb.present? %>
+      <%= image_tag post.image.small_thumb.url %>
+    <% end %>
+    <h4 class="card-title"><%= link_to post.title, post_path(post) %></h4>
+    <p class="card-text"><%= truncate(post.body, length: 150) %></p>
+    <%= link_to "Edit", edit_post_path(post), class: "btn btn-success" %>
+    <%= link_to "Delete", post_path(post), method: :destroy, class: "btn btn-danger" %>
+  </div>
+</div>

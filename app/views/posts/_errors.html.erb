@@ -1,0 +1,7 @@
+<% if @post.errors.any? %>
+  <ul class="list-group">
+    <% post.errors.full_message.each do |message| %>
+      <li class="list-group-item list-group-danger"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
